@@ -39,10 +39,11 @@ public class Vizualisation {
         String winner1 = "\n" + p1.getName().toUpperCase() + " WiN THE GAME\n\n" + p1.getName()
                 + " is the winner with " + p1.wonCardsDeck.toString() + "\n\n" + p2.getName() + " have "
                 + p2.wonCardsDeck.toString().toString();
-        String winner2 = "\n" + p2.getName().toUpperCase() + " WiN THE GAME\n\n" + p2 + " is the winner with "
-                + p2.wonCardsDeck.toString() + "\n\n" + p1.getName() + " have " + p1.wonCardsDeck.toString();
-        String equalResult = "\nEqual Result\n\n" + p1 + " have " + p1.wonCardsDeck.toString() + "\n" + p2 + " have "
-                + p2.wonCardsDeck.toString();
+        String winner2 = "\n" + p2.getName().toUpperCase() + " WiN THE GAME\n\n" + p2.getName()
+                + " is the winner with " + p2.wonCardsDeck.toString() + "\n\n" + p1.getName() + " have "
+                + p1.wonCardsDeck.toString();
+        String equalResult = "\nEqual Result\n\n" + p1.getName() + " have " + p1.wonCardsDeck.toString() + "\n"
+                + p2.getName() + " have " + p2.wonCardsDeck.toString();
 
         System.out.println(p1.wonCardsDeck.size() < p2.wonCardsDeck.size() ? winner2
                 : p1.wonCardsDeck.size() == p2.wonCardsDeck.size() ? equalResult : winner1);

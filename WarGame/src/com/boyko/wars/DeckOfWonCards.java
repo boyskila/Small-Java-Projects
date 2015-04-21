@@ -13,7 +13,9 @@ public class DeckOfWonCards {
     }
 
     public int size() {
+
         return resultDeck.size();
+
     }
 
     public void takeCardsAfterWin(Card card1, Card card2) {
@@ -47,6 +49,8 @@ public class DeckOfWonCards {
 
     @Override
     public String toString() {
+
         return "" + resultDeck.size() + " cards " + resultDeck;
+
     }
 }

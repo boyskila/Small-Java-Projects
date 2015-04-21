@@ -8,8 +8,16 @@ public class BattleArea {
 
     private Deque<Card> cardsOfWar = new LinkedList<>();
 
-    public BattleArea(Player p1, Player p2) {
+    public BattleArea(DeckOfCards cardsDeck, Player p1, Player p2) {
 
+        System.out.println(cardsDeck.toString() + "\n");
+
+        while (!cardsDeck.isEmpty()) {
+
+            p1.playerDeck.loadThePlayerCardDeck(cardsDeck.drawCard());
+            p2.playerDeck.loadThePlayerCardDeck(cardsDeck.drawCard());
+
+        }
         createBattle(p1, p2);
     }
 
@@ -36,7 +44,7 @@ public class BattleArea {
 
                 cardsOfWar.offer(p1Card);
                 cardsOfWar.offer(p2Card);
-                
+
                 createWar(p1, p2);
 
             } else {
