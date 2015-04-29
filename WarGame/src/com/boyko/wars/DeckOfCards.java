@@ -1,9 +1,9 @@
 package com.boyko.wars;
-
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Stack;
 
-public class DeckOfCards {
+public class DeckOfCards implements Iterable<Card> {
     String[] suits = { "♠", "♥", "♦", "♣" };
     String[] ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
     private Stack<Card> cardDeck;
@@ -25,12 +25,13 @@ public class DeckOfCards {
         return stack;
     }
 
-    public Card sendCard() {
-        return cardDeck.pop();
-    }
-
     @Override
     public String toString() {
         return "Playing cards deck ==> " + cardDeck;
+    }
+
+    @Override
+    public Iterator<Card> iterator() {
+        return cardDeck.iterator();
     }
 }

@@ -1,5 +1,4 @@
 package com.boyko.wars;
-
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -24,12 +23,12 @@ public class Player {
         playerDeck.offerFirst(card);
     }
 
-    public Card showCard() {
+    public Card topCard() {
         return playerDeck.pollLast();
     }
 
     public void getAllCards(Deque<Card> warCardDeck, String name) {
-        System.out.println("\n========================\n" + name + " win the Battle\n========================\n");
+        System.out.printf("%n========================%n %s win the Battle%n========================%n", name);
         while (!warCardDeck.isEmpty())
             playerDeck.offerFirst(warCardDeck.poll());
     }
