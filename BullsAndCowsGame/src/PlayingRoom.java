@@ -11,10 +11,8 @@ public class PlayingRoom {
     private void play() throws ClassNotFoundException, IOException {
         List<Player> playersDataBase = GameMenager.getDataBase(FILE_NAME);
         GameMenager.printRating(playersDataBase);
-        PlayerService playerService = new PlayerService();
-        Player player = playerService.SignInOrLogin(playersDataBase);
-        GameLogic gameLogic = new GameLogic();
-        gameLogic.run(player);
+        Player player = new PlayerService().SignInOrLogin(playersDataBase);
+        new GameLogic().run(player);
         GameMenager.menageDataBase(playersDataBase, player, FILE_NAME);
         System.out.println("\nGame Over");
     }
